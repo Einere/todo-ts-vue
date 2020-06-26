@@ -1,21 +1,27 @@
 <template>
   <div>
-    <input type="text" v-model="inputMessage"/>
-    <p>{{ message }}</p>
-    <button @click="myAlert">alert</button>
-    <button @click="childCounter">add</button>
-
+    <section class="props-data-watch-computed">
+      <input type="text" v-model="inputMessage"/>
+      <p>{{ message }}</p>
+      <button @click="myAlert">alert</button>
+    </section>
+    <section class="emit">
+      <button @click="childCounter">add</button>
+    </section>
+    <section class="provide-injected">
+      <p>{{ injected }}</p>
+    </section>
   </div>
 </template>
 
 <script lang="ts">
 import {
-  Vue, Component, Prop, Watch, Emit,
+  Vue, Component, Prop, Watch, Emit, Inject,
 } from 'vue-property-decorator';
 
 @Component
 export default class Message extends Vue {
-  @Prop() public parentMessage!: string;
+  @Prop() public parentMessage?: string;
 
   private inputMessage: string | null = null;
 
@@ -39,6 +45,8 @@ export default class Message extends Vue {
   childCounter() {
     return 1;
   }
+
+  @Inject('provided') readonly injected!: string;
 }
 </script>
 
