@@ -29,8 +29,8 @@ export default class MyModel extends Vue {
 
   @Emit('checkboxChanged')
   // eslint-disable-next-line class-methods-use-this
-  handleClick(e: Event) {
-    return e.target?.checked;
+  handleClick(e: MouseEvent) {
+    return (e.target as HTMLInputElement).checked;
   }
 }
 </script>
