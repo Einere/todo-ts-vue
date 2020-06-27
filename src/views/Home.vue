@@ -5,6 +5,8 @@
     <p>count : {{ count }}</p>
     <MyModel v-model="isChecked" @checkboxChanged="handleCheckboxChange" />
     <p v-if="isChecked">checked!</p>
+    <BusA/>
+    <BusB/>
   </div>
 </template>
 
@@ -12,9 +14,13 @@
 import { Vue, Component, Provide } from 'vue-property-decorator';
 import Message from '@/components/Message.vue';
 import MyModel from '@/components/MyModel.vue';
+import BusA from '@/components/BusA.vue';
+import BusB from '@/components/BusB.vue';
 
 @Component({
-  components: { Message, MyModel },
+  components: {
+    Message, MyModel, BusA, BusB,
+  },
 })
 export default class Home extends Vue {
   private parentMessage = 'hello';
