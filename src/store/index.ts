@@ -5,6 +5,7 @@ import Vuex, {
 import { RootState } from '@/store/storeTypes';
 import moduleA from '@/store/ModuleA.ts';
 import moduleB from '@/store/ModuleB.ts';
+import todoModule from '@/store/TodoModule';
 
 Vue.use(Vuex);
 
@@ -32,6 +33,7 @@ const store: StoreOptions<RootState> = {
   modules: {
     moduleA,
     moduleB,
+    todoModule,
   },
 };
 

@@ -18,3 +18,12 @@ export interface SubStateB {
   bar: boolean;
 }
 
+export interface TodoItemType {
+  id: number;
+  title: string;
+  status: boolean;
+}
+
+export interface SubStateTodo {
+  todoList: TodoItemType[];
+}

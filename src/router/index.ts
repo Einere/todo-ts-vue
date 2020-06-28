@@ -5,7 +5,7 @@ Vue.use(VueRouter);
 
 const routes: Array<RouteConfig> = [
   {
-    path: '/home',
+    path: '/',
     name: 'Home',
     component: () => import(/* webpackChunkName: "home" */ '../views/Home.vue'),
   },
@@ -23,9 +23,9 @@ const routes: Array<RouteConfig> = [
     component: () => import(/* webpackChunkName: "vuex" */ '../views/Vuex.vue'),
   },
   {
-    path: '/:filter?',
-    name: 'All',
-    component: () => import(/* webpackChunkName: "All" */ '../views/All.vue'),
+    path: '/todo/:filter?',
+    name: 'Todo.vue',
+    component: () => import(/* webpackChunkName: "Todo" */ '../views/Todo.vue'),
   },
 ];
 
