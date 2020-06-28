@@ -27,15 +27,27 @@ const todoModule: Module<SubStateTodo, RootState> = {
 
       commit('setTodoList', state.todoList.concat({ ...newTodoItem, id: newId, status: false }));
     },
-    setStatus(context, { id, status }) {
+    removeTodo(context, { id }: Pick<TodoItemType, 'id'>) {
       const {
         state,
         commit,
       } = context;
 
       const copiedTodoList = [...state.todoList];
-      const targetId = copiedTodoList.findIndex((todoItem) => todoItem.id === id);
-      copiedTodoList[targetId].status = status;
+      const targetIndex = copiedTodoList.findIndex((todoItem) => todoItem.id === id);
+      copiedTodoList.splice(targetIndex, 1);
+
+      commit('setTodoList', copiedTodoList);
+    },
+    setStatus(context, { id, status }: Pick<TodoItemType, 'id' | 'status'>) {
+      const {
+        state,
+        commit,
+      } = context;
+
+      const copiedTodoList = [...state.todoList];
+      const targetIndex = copiedTodoList.findIndex((todoItem) => todoItem.id === id);
+      copiedTodoList[targetIndex].status = status;
 
       commit('setTodoList', copiedTodoList);
     },

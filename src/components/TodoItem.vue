@@ -29,7 +29,9 @@ export default class TodoItem extends Vue {
   }
 
   removeTodoItem() {
-    console.log(`[${this.title}] removed!`);
+    this.$store.dispatch(`todoModule/${ActionEnum.removeTodo}`, {
+      id: this.id,
+    });
   }
 }
 </script>

@@ -3,6 +3,7 @@ export enum ActionEnum {
   changeFoo = 'changeFoo',
   changeBar = 'changeBar',
   addTodo = 'addTodo',
+  removeTodo = 'removeTodo',
   setStatus = 'setStatus',
 }
 
