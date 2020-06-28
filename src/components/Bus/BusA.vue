@@ -7,7 +7,7 @@
 
 <script lang="ts">
 import { Vue, Component } from 'vue-property-decorator';
-import Bus from '@/components/Bus.ts';
+import Bus from '@/components/Bus/Bus.ts';
 
 @Component
 export default class BusA extends Vue {

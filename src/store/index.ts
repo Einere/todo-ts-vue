@@ -3,8 +3,8 @@ import Vuex, {
   StoreOptions,
 } from 'vuex';
 import { RootState } from '@/store/storeTypes';
-import moduleA from '@/store/ModuleA';
-import moduleB from '@/store/ModuleB';
+import moduleA from '@/store/ModuleA.ts';
+import moduleB from '@/store/ModuleB.ts';
 
 Vue.use(Vuex);
 

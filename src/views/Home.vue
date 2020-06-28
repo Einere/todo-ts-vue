@@ -14,8 +14,8 @@
 import { Vue, Component, Provide } from 'vue-property-decorator';
 import Message from '@/components/Message.vue';
 import MyModel from '@/components/MyModel.vue';
-import BusA from '@/components/BusA.vue';
-import BusB from '@/components/BusB.vue';
+import BusA from '@/components/Bus/BusA.vue';
+import BusB from '@/components/Bus/BusB.vue';
 
 @Component({
   components: {
