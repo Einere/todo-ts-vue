@@ -29,6 +29,7 @@
 
 <script lang="ts">
 import { Vue, Component } from 'vue-property-decorator';
+import { ActionEnum } from '@/store/storeTypes';
 
 @Component
 export default class Vuex extends Vue {
@@ -47,11 +48,11 @@ export default class Vuex extends Vue {
   }
 
   changeFoo(e: Event) {
-    if (e.target) this.$store.dispatch('moduleA/changeFoo', (e.target as HTMLInputElement).value);
+    if (e.target) this.$store.dispatch(`moduleA/${ActionEnum.changeFoo}`, (e.target as HTMLInputElement).value);
   }
 
   changeBar(e: Event) {
-    if (e.target) this.$store.dispatch('moduleB/changeBar', (e.target as HTMLInputElement).value);
+    if (e.target) this.$store.dispatch(`moduleB/${ActionEnum.changeBar}`, (e.target as HTMLInputElement).value);
   }
 }
 </script>

@@ -1,5 +1,5 @@
 import { Module } from 'vuex';
-import { RootState, SubStateB } from '@/store/storeTypes';
+import { ActionEnum, RootState, SubStateB } from '@/store/storeTypes';
 
 const moduleB: Module<SubStateB, RootState> = {
   namespaced: true,
@@ -12,7 +12,7 @@ const moduleB: Module<SubStateB, RootState> = {
     },
   },
   actions: {
-    changeBar(context, argument: boolean) {
+    [ActionEnum.changeBar](context, argument: boolean) {
       const {
         commit,
       } = context;
