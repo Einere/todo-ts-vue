@@ -1,14 +1,13 @@
 import Vue from 'vue';
 import VueRouter, { RouteConfig } from 'vue-router';
-import Home from '../views/Home.vue';
 
 Vue.use(VueRouter);
 
 const routes: Array<RouteConfig> = [
   {
-    path: '/',
+    path: '/home',
     name: 'Home',
-    component: Home,
+    component: () => import(/* webpackChunkName: "home" */ '../views/Home.vue'),
   },
   {
     path: '/about',
@@ -22,6 +21,11 @@ const routes: Array<RouteConfig> = [
     path: '/vuex',
     name: 'Vuex',
     component: () => import(/* webpackChunkName: "vuex" */ '../views/Vuex.vue'),
+  },
+  {
+    path: '/:filter?',
+    name: 'All',
+    component: () => import(/* webpackChunkName: "All" */ '../views/All.vue'),
   },
 ];
 
