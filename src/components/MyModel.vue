@@ -28,7 +28,6 @@ export default class MyModel extends Vue {
   @Model('change', { type: Boolean }) readonly isChecked!: boolean;
 
   @Emit('checkboxChanged')
-  // eslint-disable-next-line class-methods-use-this
   handleClick(e: MouseEvent) {
     return (e.target as HTMLInputElement).checked;
   }
